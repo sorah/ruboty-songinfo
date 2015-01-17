@@ -18,6 +18,7 @@ module RubotySonginfo
         artist: :show_artist,
         appearance: :show_appearance,
         composer: :show_composer,
+        arranger: :show_arranger,
         lyricist: :show_lyricist,
       }
 
@@ -167,6 +168,7 @@ module RubotySonginfo
       alias show_artist show_list
       alias show_appearance show_list
       alias show_composer show_list
+      alias show_arranger show_list
       alias show_lyricist show_list
     end
   end
