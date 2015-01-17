@@ -23,6 +23,7 @@ module RubotySonginfo
       }
 
       def show(ref)
+        return nil unless ref
         raise ArgumentError if ref.provider != self.class
 
         link = ref.spec[:link]
