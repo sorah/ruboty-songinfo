@@ -160,7 +160,8 @@ module RubotySonginfo
         SearchResult.new(html.at('.main h1').inner_text,
           rows.map do |row|
             itemlink = row.at('a[href^="item-"]')
-            Ref.new(self.class, itemlink.inner_text, :song,
+            artistlink= row.at('a[href^="subcat-uta-"]')
+            Ref.new(self.class, "#{itemlink.inner_text} -- #{artistlink.inner_text}", :song,
                     link: URI("http://www.kasi-time.com/#{itemlink[:href]}"))
           end
         )
