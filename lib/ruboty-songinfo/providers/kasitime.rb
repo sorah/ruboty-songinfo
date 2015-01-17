@@ -14,8 +14,8 @@ module RubotySonginfo
   module Providers
     class Kasitime < Base
       SHOW_METHODS = {
-        song: :show_song,
         artist: :show_artist,
+        song: :show_song,
         appearance: :show_appearance,
         composer: :show_composer,
         arranger: :show_arranger,
