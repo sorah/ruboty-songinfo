@@ -63,7 +63,11 @@ module Ruboty
 
         if result.kind_of?(RubotySonginfo::SearchResult) && (mode == :show || mode == :lyric)
           ref = result.items.first
-          result = (cache[ref.spec] ||= provider.show(ref))
+          if ref
+            result = (cache[ref.spec] ||= provider.show(ref))
+          else
+            result = nil
+          end
         end
 
         format result, show_lyric: mode == :lyric, page: page
